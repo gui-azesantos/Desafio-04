@@ -2,19 +2,19 @@ package br.com.gft.model;
 
 import java.util.List;
 
-public class Loja  {
+public class Loja {
 	String nome;
 	String cnpj;
 	List<Livro> livro;
 	List<VideoGame> videogame;
 
-public Loja(String nome, String cnpj, List<Livro> livro, List<VideoGame> videogame, double patrimoniototal) {
+	public Loja(String nome, String cnpj, List<Livro> livro, List<VideoGame> videogame, double patrimoniototal) {
 		super();
 		this.nome = nome;
 		this.cnpj = cnpj;
 		this.livro = livro;
 		this.videogame = videogame;
-		this.patrimoniototal = patrimoniototal;
+
 	}
 
 	public String getNome() {
@@ -48,20 +48,22 @@ public Loja(String nome, String cnpj, List<Livro> livro, List<VideoGame> videoga
 	public void setVideogame(List<VideoGame> videogame) {
 		this.videogame = videogame;
 	}
-	
-	public double patrimoniototal = 0; 
-	
+
+	public double patrimoniototal1 = 0;
+	public double patrimoniototal2 = 0;
+
 	public void videogame() {
-		System.out.println("------------------------------------------------------------------------------------------------------------------------");
+		System.out.println(
+				"------------------------------------------------------------------------------------------------------------------------");
 		System.out.println("Jogos disponiveis nas lojas americanas:");
 		if (livro.size() == 0) {
 			System.out.println("A loja não tem jogos disponiveis no estoque");
 		}
-		
+
 		for (int i = 0; i < videogame.size(); i++) {
-			System.out.println("\t VideoGame: " + videogame.get(i).nome + ", preço: R$" + videogame.get(i).preco + " e "
-					+ videogame.get(i).qtd + " produtos em estoque");
-					 patrimoniototal += (videogame.get(i).preco * videogame.get(i).qtd);
+			System.out.println("\t VideoGame: " + videogame.get(i).getNome()+ ", preço: R$" + videogame.get(i).getPreco() + " e "
+					+ videogame.get(i).getQtd()+ " produtos em estoque");
+
 		}
 	}
 
@@ -74,16 +76,27 @@ public Loja(String nome, String cnpj, List<Livro> livro, List<VideoGame> videoga
 			System.out.println("A loja não tem livro disponiveis  no estoque");
 		}
 		for (int i = 0; i < livro.size(); i++) {
-			System.out.println("\t Titulo: " + livro.get(i).nome + ", preço: R$" + livro.get(i).preco + " e "
-					+ livro.get(i).qtd + " produtos em estoque");
-					 patrimoniototal += (livro.get(i).preco * livro.get(i).qtd);
+			System.out.println("\t Titulo: " + livro.get(i).getNome() + ", preço: R$" + livro.get(i).getPreco() + " e "
+					+ livro.get(i).getQtd() + " produtos em estoque");
+
 		}
 	}
 
 	public double calculapatrimonio() {
-		
-		System.out.println("Patrimonio Total:" +patrimoniototal);
-		return 0; 
-	}
 
+		
+		double result= 0;
+		double result1= 0;
+		
+		for (int i = 0; i < livro.size(); i++) {
+			result += (int) videogame.get(i).getPreco() * videogame.get(i).getQtd();
+		}
+		for (int i = 0; i < livro.size(); i++) {
+			result1 += (int) livro.get(i).getPreco() * livro.get(i).getQtd();
+		}
+		
+		System.out.println("Total de patrimonio: R$" + (result + result1));
+		return result + result1; 
+		
+	}
 }

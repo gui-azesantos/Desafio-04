@@ -10,14 +10,14 @@ import br.com.gft.model.VideoGame;
 public class main {
 
 	public static void main(String[] args) {
-		Livro l1 = new Livro("Harry Potter", 40.0, 50, "J. K. Rowling", "fantasia", 300);
-		Livro l2 = new Livro("Senhor dos Anéis", 60.0, 30, "J. J. R Tolkein", "fantasia", 500);
-		Livro l3 = new Livro("Java POO", 20.00, 50, "GFT", "educativo", 500);
+		Livro l1 = new Livro("Harry Potter", 40, 50, "J. K. Rowling", "fantasia", 300);
+		Livro l2 = new Livro("Senhor dos Anéis", 60, 30, "J. J. R Tolkein", "fantasia", 500);
+		Livro l3 = new Livro("Java POO", 20, 50, "GFT", "educativo", 500);
 //		Livro l4 = new Livro(nome, preco, qtd, autor, tema, qtdPag);
 
-		VideoGame ps4 = new VideoGame("PS4", 1800.00, 100, "Sony", "Slim", false);
-		VideoGame ps4Usado = new VideoGame("PS4Usado", 1000.00, 7, "Sony", "Slim", true);
-		VideoGame xbox = new VideoGame("XBOX", 1500.00, 100, "Microsoft", "One", false);
+		VideoGame ps4 = new VideoGame("PS4", 1800, 100, "Sony", "Slim", false);
+		VideoGame ps4Usado = new VideoGame("PS4Usado", 1000, 7, "Sony", "Slim", true);
+		VideoGame xbox = new VideoGame("XBOX", 1500, 500, "Microsoft", "One", false);
 
 		List<Livro> livros = new ArrayList<>();
 		livros.add(l1);

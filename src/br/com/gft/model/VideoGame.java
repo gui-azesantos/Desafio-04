@@ -3,9 +3,9 @@ package br.com.gft.model;
 import br.com.gft.interfaces.Imposto;
 
 public class VideoGame extends Produto implements Imposto {
-	String marca;
-	String modelo;
-	boolean isUsado;
+	private String marca;
+	private String modelo;
+	private boolean isUsado;
 
 	public VideoGame(String nome, double preco, int qtd, String marca, String modelo, boolean isUsado) {
 		super(nome, preco, qtd);
@@ -41,13 +41,13 @@ public class VideoGame extends Produto implements Imposto {
 	@Override
 	public double calculaimposto() {
 		if (isUsado = true) {
-		double imposto = preco*0.25;
-		System.out.println( "Imposto "+ nome + ", " + imposto);
+		double imposto = getPreco()*0.25;
+		System.out.println( "Imposto "+ getNome() + ", " + imposto);
 		return (0);
 			}
 		else {
-		double imposto = preco*0.45;
-		System.out.println( "Imposto "+ nome + ", " + imposto);
+		double imposto = getPreco()*0.45;
+		System.out.println( "Imposto "+ getNome() + ", " + imposto);
 		return (0);
 		}
 	}
